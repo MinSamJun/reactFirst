@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { useState } from "react";
 
 function App() {
+  const [pressTime, updatePressTime] = useState(0);
+
+  const ClickTimeUp = () => {
+    updatePressTime(pressTime + 1);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>버튼을 눌러봐!</h1>
+      <p onClick={ClickTimeUp}>버튼</p>
+      <p>{pressTime}</p>
     </div>
   );
 }
